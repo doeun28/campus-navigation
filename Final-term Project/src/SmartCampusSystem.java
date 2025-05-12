@@ -54,3 +54,4 @@ public class SmartCampusSystem {
             }
         }
     }
+    private static void showBuildingInfo() {}
