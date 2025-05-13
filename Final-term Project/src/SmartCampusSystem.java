@@ -14,7 +14,7 @@ public class SmartCampusSystem {
                     showBuildingInfo();
                     break;
                 case 2:
-                    showCafeteriaMenu();
+                    showSchoolcafeteriaMenu();
                     break;
                 case 3:
                     showShuttleSchedule();
@@ -54,4 +54,8 @@ public class SmartCampusSystem {
             }
         }
     }
-    private static void showBuildingInfo() {}
+    private static void showBuildingInfo() {
+         Map<String, String> BuildingInfo = new HashMap<>();
+    }
+}
+    private static void showSchoolcafeteriaMenu()
