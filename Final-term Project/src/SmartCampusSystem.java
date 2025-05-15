@@ -33,7 +33,7 @@ public class SmartCampusSystem {
     }
 
     private static void printMenu() {
-        System.out.println("\n===== 스마트 캠퍼스 정보 시스템 =====");
+        System.out.println("- 스마트 캠퍼스 정보 시스템 -");
         System.out.println("1. 건물 정보 보기");
         System.out.println("2. 식당 메뉴 보기");
         System.out.println("3. 셔틀 시간표 보기");
@@ -55,7 +55,14 @@ public class SmartCampusSystem {
         }
     }
     private static void showBuildingInfo() {
-         Map<String, String> BuildingInfo = new HashMap<>();
+         Map<String, String> BuildingInfo = Map.of(
+             "6", "6동 건물 :",
+             "8", "8동 건물 : 대학원, 보건의료대학 본관 ",
+             "9", "9동 건물 : 경상대학, 교양 과목 수업도 진행 ",
+             "11", "11동 건물 : 중앙도서관, 자율 학습 가능 및 도서 대여 가능 ",
+             "13", "13동 건물 : 종합강의동, 주로 교양 수업 진행 ",
+             "20", "20동 건물 : 사회과학대학, 사범대학 ",
+             "42", "42동 건물 : 새천년 종합정보관, 영어 수업 진행 "
+         );
     }
-}
     private static void showSchoolcafeteriaMenu()
