@@ -66,4 +66,11 @@ public class SmartCampusSystem {
          );
          System.out.print("건물 번호를 입력하세요 : ");
          String code = scanner.nextLine();
+        String info = BuildingInfo.get(code);
+        if (info != null) {
+            System.out.println("🔎 " + info);
+        } else {
+            System.out.println("❌ 해당 건물 정보를 찾을 수 없습니다.");
+        }
     }
+
