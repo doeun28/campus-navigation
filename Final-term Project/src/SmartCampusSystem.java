@@ -76,13 +76,17 @@ public class SmartCampusSystem {
     private static void showSchoolcafeteriaMenu() {
         Map<String, String> menuMap = Map.of(
                 "월요일", "전주 콩나물국밥, 쌀밥, 떡고기 산적, 양배추 진미채볶음, 김구이, 깍두기",
-                "화요일", "",
+                "화요일", "마파두부덮밥, 시금치된장국, 꿔바로우, 단무지",
                 "수요일", "",
                 "목요일", "",
                 "금요일", ""
         );
         System.out.print("요일을 입력하세요 : ");
         String day = scanner.nextLine();
+        String menu = menuMap.get(day);
+        if (menu != null) {
+            System.out.println("🍴 " + day + "요일 식당 메뉴: " + menu);
+        }
 
 
 
