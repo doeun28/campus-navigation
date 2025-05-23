@@ -79,7 +79,7 @@ public class SmartCampusSystem {
                 "화요일", "마파두부덮밥, 시금치된장국, 꿔바로우, 단무지",
                 "수요일", "돼지국밥, 쌀밥, 동그랑땡전, 오이지양파무침, 깍두기",
                 "목요일", "육개장, 쌀밥, 사모사튀김, 감자채당근볶음, 깍두기",
-                "금요일", ""
+                "금요일", "오징어짜글이, 쌀밥, 탕수육, 어묵야채볶음, 배추김치"
         );
         System.out.print("요일을 입력하세요 : ");
         String day = scanner.nextLine();
@@ -90,6 +90,9 @@ public class SmartCampusSystem {
             System.out.println("입력한 요일의 메뉴 정보를 찾을 수 없습니다.");
         }
     }
+    private static void showShuttleSchedule() {
+        System.out.println("셔틀 운행 시간표:");
+
 
 
 
