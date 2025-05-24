@@ -92,6 +92,11 @@ public class SmartCampusSystem {
     }
     private static void showShuttleSchedule() {
         System.out.println("셔틀 운행 시간표:");
+        System.out.println(" - 정문 출발: ");
+        System.out.println(" - 후문 출발: ");
+        System.out.println(" - 혼잡 시간대: ");
+    }
+
 
 
 
