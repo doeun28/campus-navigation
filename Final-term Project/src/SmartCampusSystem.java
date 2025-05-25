@@ -90,11 +90,12 @@ public class SmartCampusSystem {
             System.out.println("입력한 요일의 메뉴 정보를 찾을 수 없습니다.");
         }
     }
+    private static Map<String, String> shuttleInfoMap = new LinkedHashMap<>();
     private static void showShuttleSchedule() {
-        System.out.println("셔틀 운행 시간표:");
-        System.out.println(" - 정문 출발: ");
-        System.out.println(" - 후문 출발: ");
-        System.out.println(" - 혼잡 시간대: ");
+        shuttleInfoMap.put("08:10", "정문 → 생활관 / 학교버스 1");
+        shuttleInfoMap.put("08:20", "정문 → 생활관 / 학교버스 2");
+        shuttleInfoMap.put("08:30", "정문 → 생활관 / 학교버스 1");
+        shuttleInfoMap.put("08:40", "정문 → 생활관 / 학교버스 2");
     }
 
 
