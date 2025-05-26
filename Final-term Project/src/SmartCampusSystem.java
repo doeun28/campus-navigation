@@ -96,7 +96,16 @@ public class SmartCampusSystem {
         shuttleInfoMap.put("08:20", "정문 → 생활관 / 학교버스 2");
         shuttleInfoMap.put("08:30", "정문 → 생활관 / 학교버스 1");
         shuttleInfoMap.put("08:40", "정문 → 생활관 / 학교버스 2");
-    }
+        shuttleInfoMap.put("09:00", "생활관 → 정문 / 학교버스 1");
+        shuttleInfoMap.put("09:10", "생활관 → 정문 / 학교버스 2 (화,수,목 결행)");
+        shuttleInfoMap.put("09:20", "생활관 → 정문 / 학교버스 1");
+        shuttleInfoMap.put("09:30", "생활관 → 정문 / 미래로관광");
+        private static void searchShuttleByTime() {
+            System.out.print("조회할 시간을 입력하세요 : ");
+            String time = scanner.nextLine();
+
+
+        }
 
 
 
