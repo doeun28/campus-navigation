@@ -103,9 +103,17 @@ public class SmartCampusSystem {
         private static void searchShuttleByTime() {
             System.out.print("조회할 시간을 입력하세요 : ");
             String time = scanner.nextLine();
-
-
+            String info = shuttleInfoMap.get(time);
+            if (info != null) {
+                System.out.println("🔍 [" + time + "] " + info);
+            } else {
+                System.out.println("해당 시간에 운행하는 셔틀이 없습니다.");
+            }
         }
+
+
+
+    }
 
 
 
