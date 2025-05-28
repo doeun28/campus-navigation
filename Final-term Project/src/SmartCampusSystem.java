@@ -110,6 +110,8 @@ public class SmartCampusSystem {
                 System.out.println("해당 시간에 운행하는 셔틀이 없습니다.");
             }
         }
+        System.out.println("5. 시간으로 셔틀 검색하기");
+        case 5 -> searchShuttleByTime();
 
 
 
