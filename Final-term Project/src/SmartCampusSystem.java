@@ -112,10 +112,10 @@ public class SmartCampusSystem {
         }
         System.out.println("5. 시간으로 셔틀 검색하기");
         case 5 -> searchShuttleByTime();
-
-
-
     }
+    private static void showTaxiPoints() {
+        System.out.println("추천 택시 승하차 지점:");
+
 
 
 
