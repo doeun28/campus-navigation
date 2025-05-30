@@ -5,6 +5,12 @@ public class SmartCampusSystem {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        BuildingInfo buildingInfo = new BuildingInfo(scanner);
+        CafeteriaMenu cafeteria = new CafeteriaMenu(scanner);
+        ShuttleSchedule shuttleService = new ShuttleSchedule(scanner);
+        TaxiPoints taxiService = new TaxiPoints();
+
+    }
         while (true) {
             printMenu();
             int choice = getChoice();
