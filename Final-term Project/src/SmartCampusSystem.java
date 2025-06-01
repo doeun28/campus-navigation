@@ -13,27 +13,19 @@ public class SmartCampusSystem {
     }
         while (true) {
             printMenu();
-            int choice = getChoice();
+            int choice = getChoice(Scanner);
 
             switch (choice) {
-                case 1:
-                    showBuildingInfo();
-                    break;
-                case 2:
-                    showSchoolcafeteriaMenu();
-                    break;
-                case 3:
-                    showShuttleSchedule();
-                    break;
-                case 4:
-                    showTaxiPoints();
-                    break;
-                case 0:
+                case 1 -> BuildingInfo.display();
+                case 2 -> CafeteriaMenu.display();
+                case 3 -> ShuttleSchedule.display();
+                case 4 -> TaxiPoints.display();
+                case 0 -> {
                     System.out.println("프로그램을 종료합니다.");
                     return;
-                default:
-                    System.out.println("올바른 번호를 입력하세요.");
-                    break;
+                }
+                default -> System.out.println("올바른 번호를 입력하세요.");
+
             }
         }
     }
