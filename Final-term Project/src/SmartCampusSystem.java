@@ -41,17 +41,14 @@ public class SmartCampusSystem {
     }
 
 
-    private static int getChoice() {
-        while (true) {
-            System.out.print("번호를 입력하세요: ");
-            if (scanner.hasNextInt()) {
-                return scanner.nextInt(); // 정상 입력이면 리턴
-            } else {
-                System.out.println("숫자만 입력하세요");
-                scanner.next(); // 잘못된 입력 제거
-            }
+    private static int getChoice(Scanner scanner) {
+        while (!scanner.hasNextInt()) {
+          System.out.print("숫자만 입력하세요: ");
+          scanner.next();
         }
+        return scanner.nextInt();
     }
+
     private static void showBuildingInfo() {
         Map<String, String> BuildingInfo = Map.of(
                 "6", "6동 건물 : 융합관, 행정부서/교수연구실/강의실/세미나실/주차장/편의시설/열람실 로 쓰임 공과대학 수업 진행 ",
