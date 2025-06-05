@@ -5,30 +5,34 @@ public class SmartCampusSystem {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        BuildingInfo buildingInfo = new BuildingInfo(scanner);
-        CafeteriaMenu cafeteria = new CafeteriaMenu(scanner);
-        ShuttleSchedule shuttleService = new ShuttleSchedule(scanner);
-        TaxiPoints taxiService = new TaxiPoints();
-
-    }
         while (true) {
             printMenu();
-            int choice = getChoice(Scanner);
+            int choice = getChoice();
 
             switch (choice) {
-                case 1 -> BuildingInfo.display();
-                case 2 -> CafeteriaMenu.display();
-                case 3 -> ShuttleSchedule.display();
-                case 4 -> TaxiPoints.display();
-                case 0 -> {
+                case 1:
+                    showBuildingInfo();
+                    break;
+                case 2:
+                    showSchoolcafeteriaMenu();
+                    break;
+                case 3:
+                    showShuttleSchedule();
+                    break;
+                case 4:
+                    showTaxiPoints();
+                    break;
+                case 0:
                     System.out.println("프로그램을 종료합니다.");
                     return;
-                }
-                default -> System.out.println("올바른 번호를 입력하세요.");
-
+                default:
+                    System.out.println("올바른 번호를 입력하세요.");
+                    break;
             }
         }
     }
+
+
 
     private static void printMenu() {
         System.out.println("- 스마트 캠퍼스 정보 시스템 -");
@@ -49,9 +53,9 @@ public class SmartCampusSystem {
         return scanner.nextInt();
     }
 
-class BuildingInfo {
-    private final Scanner scanner;
-    private final Map<String, String> buildingMap = Map.of(
+    class BuildingInfo {
+        private final Scanner scanner;
+        private final Map<String, String> buildingMap = Map.of(
 
             "6", "6동 건물 : 융합관, 행정부서/교수연구실/강의실/세미나실/주차장/편의시설/열람실 로 쓰임 공과대학 수업 진행 ",
                 "8", "8동 건물 : 보건의료과학대학, 행정부서/교수연구실/강의실/세미나실/주차장/편의시설/열람실 로 쓰임 보건의료과학대학 수업 진행 ",
