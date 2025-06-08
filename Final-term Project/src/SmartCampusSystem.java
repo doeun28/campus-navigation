@@ -11,7 +11,7 @@ public class SmartCampusSystem {
 
             switch (choice) {
                 case 1:
-                    showBuildingInfo();
+                    BuildingInfo();
                     break;
                 case 2:
                     showSchoolcafeteriaMenu();
@@ -45,12 +45,16 @@ public class SmartCampusSystem {
     }
 
 
-    private static int getChoice(Scanner scanner) {
-        while (!scanner.hasNextInt()) {
-          System.out.print("숫자만 입력하세요: ");
-          scanner.next();
+    private static int getChoice() {
+        while (true) {
+            System.out.print("번호를 입력하세요: ");
+            if (scanner.hasNextInt()) {
+                return scanner.nextInt();
+            } else {
+                System.out.println("숫자만 입력하세요");
+                scanner.next();
+            }
         }
-        return scanner.nextInt();
     }
 
     class BuildingInfo {
