@@ -57,11 +57,9 @@ public class SmartCampusSystem {
         }
     }
 
-    class BuildingInfo {
-        private final Scanner scanner;
-        private final Map<String, String> buildingMap = Map.of(
-
-            "6", "6동 건물 : 융합관, 행정부서/교수연구실/강의실/세미나실/주차장/편의시설/열람실 로 쓰임 공과대학 수업 진행 ",
+    private static void BuildingInfo() {
+        Map<String, String> BuildingInfo = Map.of(
+                "6", "6동 건물 : 융합관, 행정부서/교수연구실/강의실/세미나실/주차장/편의시설/열람실 로 쓰임 공과대학 수업 진행 ",
                 "8", "8동 건물 : 보건의료과학대학, 행정부서/교수연구실/강의실/세미나실/주차장/편의시설/열람실 로 쓰임 보건의료과학대학 수업 진행 ",
                 "9", "9동 건물 : 경상대학, 행정부서/교수연구실/강의실/세미나실/주차장/편의시설/열람실 로 쓰임 경상대학 수업과 교양 과목 수업도 진행 ",
                 "11", "11동 건물 : 중앙도서관, 도서관/열람실/편의시설/주차장 으로 쓰임 자율 학습 가능 및 도서 대여 가능 ",
@@ -69,9 +67,6 @@ public class SmartCampusSystem {
                 "20", "20동 건물 : 인문사회 + 사범대학, 행정부서/교수연구실/강의실/세미나실/주차장/편의시설/열람실 로 쓰임 인문사회 그리고 사범대학 수업 진행",
                 "42", "42동 건물 : 새천년 종합정보관, 전산정보/어학교육/교수학습개발 로 쓰임 영어 수업 진행 "
         );
-        public BuildingInfo(Scanner scanner) {
-            this.scanner = scanner;
-    }
         System.out.print("건물 번호를 입력하세요 : ");
         String code = scanner.nextLine();
         String info = BuildingInfo.get(code);
@@ -98,6 +93,7 @@ public class SmartCampusSystem {
             System.out.println("입력한 요일의 메뉴 정보를 찾을 수 없습니다.");
         }
     }
+
     private static Map<String, String> shuttleInfoMap = new LinkedHashMap<>();
     private static void showShuttleSchedule() {
         shuttleInfoMap.put("08:10", "정문 → 생활관 / 학교버스 1");
