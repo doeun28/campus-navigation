@@ -20,8 +20,9 @@ public class SmartCampusSystem {
                     showShuttleSchedule();
                     break;
                 case 4:
-                    showTaxiPoints();
+                    searchShuttleByTime();
                     break;
+
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
                     return;
@@ -31,7 +32,6 @@ public class SmartCampusSystem {
             }
         }
     }
-
 
 
     private static void printMenu() {
@@ -71,11 +71,12 @@ public class SmartCampusSystem {
         String code = scanner.nextLine();
         String info = BuildingInfo.get(code);
         if (info != null) {
-            System.out.println("🔎 " + info);
+            System.out.println(info);
         } else {
             System.out.println("해당 건물 정보를 찾을 수 없습니다.");
         }
     }
+
     private static void showSchoolcafeteriaMenu() {
         Map<String, String> menuMap = Map.of(
                 "월요일", "전주 콩나물국밥, 쌀밥, 떡고기 산적, 양배추 진미채볶음, 김구이, 깍두기",
@@ -88,14 +89,15 @@ public class SmartCampusSystem {
         String day = scanner.nextLine();
         String menu = menuMap.get(day);
         if (menu != null) {
-            System.out.println("🍴 " + day + "요일 식당 메뉴: " + menu);
+            System.out.println(day + "요일 식당 메뉴: " + menu);
         } else {
             System.out.println("입력한 요일의 메뉴 정보를 찾을 수 없습니다.");
         }
     }
 
     private static Map<String, String> shuttleInfoMap = new LinkedHashMap<>();
-    private static void showShuttleSchedule() {
+
+    private static void initShuttleSchedule() {
         shuttleInfoMap.put("08:10", "정문 → 생활관 / 학교버스 1");
         shuttleInfoMap.put("08:20", "정문 → 생활관 / 학교버스 2");
         shuttleInfoMap.put("08:30", "정문 → 생활관 / 학교버스 1");
@@ -104,20 +106,26 @@ public class SmartCampusSystem {
         shuttleInfoMap.put("09:10", "생활관 → 정문 / 학교버스 2 (화,수,목 결행)");
         shuttleInfoMap.put("09:20", "생활관 → 정문 / 학교버스 1");
         shuttleInfoMap.put("09:30", "생활관 → 정문 / 미래로관광");
-        private static void searchShuttleByTime() {
-            System.out.print("조회할 시간을 입력하세요 : ");
-            String time = scanner.nextLine();
-            String info = shuttleInfoMap.get(time);
-            if (info != null) {
-                System.out.println("🔍 [" + time + "] " + info);
-            } else {
-                System.out.println("해당 시간에 운행하는 셔틀이 없습니다.");
-            }
-        }
-        System.out.println("5. 시간으로 셔틀 검색하기");
-        case 5 -> searchShuttleByTime();
     }
-    
+
+
+    private static void showShuttleSchedule() {
+        System.out.println("셔틀 시간표:");
+        for (Map.Entry<String, String> entry : shuttleInfoMap.entrySet()) {
+                System.out.println("[" + entry.getKey() + "] " + entry.getValue());
+            }
+    }
+    private static void searchShuttleByTime() {
+        System.out.print("조회할 시간을 입력하세요 (예: 08:10): ");
+        String time = scanner.nextLine();
+        String info = shuttleInfoMap.get(time);
+        if (info != null) {
+                System.out.println("time"+ info);
+        } else {
+                System.out.println("해당 시간에 운행하는 셔틀이 없습니다.");
+        }
+    }
+}
 
 
 
