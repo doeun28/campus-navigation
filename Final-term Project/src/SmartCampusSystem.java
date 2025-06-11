@@ -39,19 +39,21 @@ public class SmartCampusSystem {
         System.out.println("1. 건물 정보 보기");
         System.out.println("2. 식당 메뉴 보기");
         System.out.println("3. 셔틀 시간표 보기");
-        System.out.println("4. 택시 승하차 추천 지점 보기");
+        System.out.println("4. 셔틀 시간 조회하기");
         System.out.println("0. 종료");
-        System.out.print("선택 >> ");
+        System.out.print(" ");
     }
 
 
     private static int getChoice() {
         while (true) {
-            System.out.print("번호를 입력하세요: ");
+            System.out.print("번호 입력: ");
             if (scanner.hasNextInt()) {
-                return scanner.nextInt();
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+                return choice;
             } else {
-                System.out.println("숫자만 입력하세요");
+                System.out.println("숫자 입력");
                 scanner.next();
             }
         }
@@ -68,7 +70,7 @@ public class SmartCampusSystem {
                 "42", "42동 건물 : 새천년 종합정보관, 전산정보/어학교육/교수학습개발 로 쓰임 영어 수업 진행 "
         );
         System.out.print("건물 번호를 입력하세요 : ");
-        String code = scanner.nextLine();
+        String code = scanner.next();
         String info = BuildingInfo.get(code);
         if (info != null) {
             System.out.println(info);
@@ -96,8 +98,7 @@ public class SmartCampusSystem {
     }
 
     private static Map<String, String> shuttleInfoMap = new LinkedHashMap<>();
-
-    private static void initShuttleSchedule() {
+    static {
         shuttleInfoMap.put("08:10", "정문 → 생활관 / 학교버스 1");
         shuttleInfoMap.put("08:20", "정문 → 생활관 / 학교버스 2");
         shuttleInfoMap.put("08:30", "정문 → 생활관 / 학교버스 1");
@@ -120,7 +121,7 @@ public class SmartCampusSystem {
         String time = scanner.nextLine();
         String info = shuttleInfoMap.get(time);
         if (info != null) {
-                System.out.println("time"+ info);
+                System.out.println("노선: "+ info);
         } else {
                 System.out.println("해당 시간에 운행하는 셔틀이 없습니다.");
         }
