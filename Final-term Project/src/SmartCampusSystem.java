@@ -53,7 +53,7 @@ public class SmartCampusSystem {
                 scanner.nextLine();
                 return choice;
             } else {
-                System.out.println("숫자 입력");
+                System.out.println("숫자 입력: ");
                 scanner.next();
             }
         }
@@ -69,7 +69,7 @@ public class SmartCampusSystem {
                 "20", "20동 건물 : 인문사회 + 사범대학, 행정부서/교수연구실/강의실/세미나실/주차장/편의시설/열람실 로 쓰임 인문사회 그리고 사범대학 수업 진행",
                 "42", "42동 건물 : 새천년 종합정보관, 전산정보/어학교육/교수학습개발 로 쓰임 영어 수업 진행 "
         );
-        System.out.print("건물 번호를 입력하세요 : ");
+        System.out.print("건물 번호를 입력하세요: ");
         String code = scanner.next();
         String info = BuildingInfo.get(code);
         if (info != null) {
